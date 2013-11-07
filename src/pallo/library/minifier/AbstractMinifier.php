@@ -29,6 +29,12 @@ abstract class AbstractMinifier implements Minifier {
     private $lazy;
 
     /**
+     * Hostname of the request
+     * @var string
+     */
+    private $host;
+
+    /**
      * Constructs a new optimizer
      * @param pallo\library\system\file\browser\FileBrowser $fileBrowser
      * @param string $cachePath Path in the public directory
@@ -59,6 +65,15 @@ abstract class AbstractMinifier implements Minifier {
      */
     public function setLazy($lazy) {
         $this->lazy = $lazy;
+    }
+
+    /**
+     * Sets the hostname of the request
+     * @param string $host
+     * @return null
+     */
+    public function setHost($host) {
+        $this->host = $host;
     }
 
     /**
@@ -127,6 +142,10 @@ abstract class AbstractMinifier implements Minifier {
     protected function getMinifiedFile(array $files) {
         $fileName = $this->getMinifiedFileHash($files);
         $fileName .= '.' . $this->getExtension();
+
+        if ($this->host) {
+            $fileName = $this->host . '-' . $fileName;
+        }
 
         return $this->cachePath->getChild($fileName);
     }
