@@ -15,4 +15,10 @@ interface Minifier {
      */
     public function minify(array $resources);
 
+    /**
+     * Clears the cache of this minifier
+     * @return null
+     */
+    public function clearCache();
+
 }
