@@ -77,6 +77,16 @@ abstract class AbstractMinifier implements Minifier {
     }
 
     /**
+     * Clears the cache of this minifier
+     * @return null
+     */
+    public function clearCache() {
+        if ($this->cachePath->exists()) {
+            $this->cachePath->delete();
+        }
+    }
+
+    /**
      * Minifies an array of resources into 1 resource
      * @param array $resources Array of resources which need to be minified
      * into 1 resource
