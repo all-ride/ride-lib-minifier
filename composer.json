@@ -1,6 +1,6 @@
 {
-    "name": "pallo/lib-minifier",
-    "description": "Minifier library of the Pallo framework",
+    "name": "ride/lib-minifier",
+    "description": "Minifier library of the Ride framework",
     "license": "MIT",
     "version": "0.2.0",
     "authors": [
@@ -10,12 +10,12 @@
         }
     ],
     "require": {
-        "pallo/lib-image": ">=0.1.0",
-        "pallo/lib-system": ">=0.3.0"
+        "ride/lib-image": ">=0.1.0",
+        "ride/lib-system": ">=0.3.0"
     }, 
     "autoload": {
         "psr-0": {
-            "pallo\\library\\minifier\\": ["src/", "test/src/"]
+            "ride\\library\\minifier\\": ["src/", "test/src/"]
         }
     }
 }

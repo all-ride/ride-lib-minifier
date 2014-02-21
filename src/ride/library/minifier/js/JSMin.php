@@ -46,9 +46,9 @@
  * @link https://github.com/rgrove/jsmin-php
  */
 
-namespace pallo\library\minifier\js;
+namespace ride\library\minifier\js;
 
-use pallo\library\minifier\exception\MinifierException;
+use ride\library\minifier\exception\MinifierException;
 
 class JSMin {
   const ORD_LF            = 10;

@@ -1,11 +1,11 @@
 <?php
 
-namespace pallo\library\minifier;
+namespace ride\library\minifier;
 
-use pallo\library\image\ImageUrlGenerator;
-use pallo\library\minifier\css\CSSMin;
-use pallo\library\minifier\exception\MinifierException;
-use pallo\library\system\file\File;
+use ride\library\image\ImageUrlGenerator;
+use ride\library\minifier\css\CSSMin;
+use ride\library\minifier\exception\MinifierException;
+use ride\library\system\file\File;
 
 use \Exception;
 
@@ -22,13 +22,13 @@ class CssMinifier extends AbstractMinifier {
 
     /**
      * CSS source minifier
-     * @var pallo\library\optimizer\cssmin\CSSMin
+     * @var ride\library\optimizer\cssmin\CSSMin
      */
     private $cssMinifier;
 
     /**
      * Instance of image URL generator
-     * @var pallo\library\image\ImageUrlGenerator
+     * @var ride\library\image\ImageUrlGenerator
      */
     private $imageUrlGenerator;
 
@@ -40,7 +40,7 @@ class CssMinifier extends AbstractMinifier {
 
     /**
      * Sets the instance of the image URL generator
-     * @param pallo\library\image\ImageUrlGenerator $imageUrlGenerator
+     * @param ride\library\image\ImageUrlGenerator $imageUrlGenerator
      * @return null
      */
     public function setImageUrlGenerator(ImageUrlGenerator $imageUrlGenerator) {
@@ -84,8 +84,8 @@ class CssMinifier extends AbstractMinifier {
 
     /**
      * Gets all the files needed for the provided CSS file. This will extract the imports from the CSS.
-     * @param pallo\core\Zibo $pallo Instance of Zibo
-     * @param pallo\library\filesystem\File $file CSS source file
+     * @param ride\core\Zibo $ride Instance of Zibo
+     * @param ride\library\filesystem\File $file CSS source file
      * @return array Array with the path of the file as key and the File object as value
      */
     private function getFilesFromStyle(File $file) {
@@ -152,7 +152,7 @@ class CssMinifier extends AbstractMinifier {
     /**
      * Optimizes the provided CSS source
      * @param string $source CSS source
-     * @param pallo\library\filesystem\File $file The file of the source
+     * @param ride\library\filesystem\File $file The file of the source
      * @return string optimized and minified CSS source
      */
     protected function minifySource($source, File $file) {
@@ -214,7 +214,7 @@ class CssMinifier extends AbstractMinifier {
 
     /**
      * Gets the CSS minifier
-     * @return pallo\library\optimizer\CSSMin
+     * @return ride\library\optimizer\CSSMin
      */
     private function getCssMinifier() {
         if (!$this->cssMinifier) {

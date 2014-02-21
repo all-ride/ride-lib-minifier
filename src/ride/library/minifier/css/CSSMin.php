@@ -1,6 +1,6 @@
 <?php
 
-namespace pallo\library\minifier\css;
+namespace ride\library\minifier\css;
 
 /**
  * CSS source minifier
