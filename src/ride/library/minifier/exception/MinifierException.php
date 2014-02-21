@@ -1,6 +1,6 @@
 <?php
 
-namespace pallo\library\minifier\exception;
+namespace ride\library\minifier\exception;
 
 use \Exception;
 
