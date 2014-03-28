@@ -12,13 +12,13 @@ abstract class AbstractMinifier implements Minifier {
 
     /**
      * Instance of the file browser
-     * @var ride\core\environment\filebrowser\FileBrowser
+     * @var \ride\library\system\file\browser\FileBrowser
      */
     protected $fileBrowser;
 
     /**
      * Path where the files will be cached
-     * @var ride\library\system\file\File
+     * @var \ride\library\system\file\File
      */
     private $cachePath;
 
@@ -36,7 +36,7 @@ abstract class AbstractMinifier implements Minifier {
 
     /**
      * Constructs a new optimizer
-     * @param ride\library\system\file\browser\FileBrowser $fileBrowser
+     * @param \ride\library\system\file\browser\FileBrowser $fileBrowser
      * @param string $cachePath Path in the public directory
      * @return null
      */
@@ -90,7 +90,7 @@ abstract class AbstractMinifier implements Minifier {
      * Minifies an array of resources into 1 resource
      * @param array $resources Array of resources which need to be minified
      * into 1 resource
-     * @return ride\library\system\file\File File of the minified resources
+     * @return \ride\library\system\file\File File of the minified resources
      */
     public function minify(array $resources) {
         $minifiedFile = $this->getMinifiedFile($resources);
@@ -133,7 +133,7 @@ abstract class AbstractMinifier implements Minifier {
     /**
      * Looks up a file from public to application
      * @param string $fileName
-     * @return ride\library\filesystem\File|null
+     * @return \ride\library\system\file\File|null
      */
     protected function lookupFile($fileName) {
         $file = $this->fileBrowser->getPublicFile($fileName);
@@ -147,7 +147,7 @@ abstract class AbstractMinifier implements Minifier {
     /**
      * Gets the minized file object for the provided files
      * @param array $files Array of file objects of the files to be minified
-     * @return ride\library\filesystem\File File object of the minified file
+     * @return \ride\library\system\file\File File object of the minified file
      */
     protected function getMinifiedFile(array $files) {
         $fileName = $this->getMinifiedFileHash($files);
@@ -171,7 +171,7 @@ abstract class AbstractMinifier implements Minifier {
 
     /**
      * Gets whether a new generation of the minified file is necessairy
-     * @param ride\library\filesystem\File $minifiedFile The file of the minified source
+     * @param \ride\library\system\file\File $minifiedFile The file of the minified source
      * @param array $files Array with File objects of the files to minimize
      * @return boolean True if a new generation is necessairy, false otherwise
      */
@@ -197,7 +197,7 @@ abstract class AbstractMinifier implements Minifier {
 
     /**
      * Generates the minified source file
-     * @param ride\library\filesystem\File $minifiedFile The file of the minimize source
+     * @param \ride\library\system\file\File $minifiedFile The file of the minimize source
      * @param array $files Array with File objects of the files to minimize
      * @return null
      */
@@ -215,7 +215,7 @@ abstract class AbstractMinifier implements Minifier {
     /**
      * Minimizes the provided source
      * @param string $source The source to minimize
-     * @param ride\library\filesystem\File $file The file of the source
+     * @param \ride\library\system\file\File $file The file of the source
      * @return string Minified source
      */
     abstract protected function minifySource($source, File $file);
