@@ -97,7 +97,6 @@ abstract class AbstractMinifier implements Minifier {
 
         if (!($this->lazy && $minifiedFile->exists())) {
             $files = $this->getFilesFromArray($resources);
-
             if ($this->isGenerateNecessairy($minifiedFile, $files)) {
                 $this->generateMinifiedFile($minifiedFile, $files);
             }
