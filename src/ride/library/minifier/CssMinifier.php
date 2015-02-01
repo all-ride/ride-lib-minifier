@@ -22,13 +22,13 @@ class CssMinifier extends AbstractMinifier {
 
     /**
      * CSS source minifier
-     * @var ride\library\optimizer\cssmin\CSSMin
+     * @var \ride\library\minifier\css\CSSMin
      */
     private $cssMinifier;
 
     /**
      * Instance of image URL generator
-     * @var ride\library\image\ImageUrlGenerator
+     * @var \ride\library\image\ImageUrlGenerator
      */
     private $imageUrlGenerator;
 
@@ -40,7 +40,7 @@ class CssMinifier extends AbstractMinifier {
 
     /**
      * Sets the instance of the image URL generator
-     * @param ride\library\image\ImageUrlGenerator $imageUrlGenerator
+     * @param \ride\library\image\ImageUrlGenerator $imageUrlGenerator
      * @return null
      */
     public function setImageUrlGenerator(ImageUrlGenerator $imageUrlGenerator) {
@@ -84,8 +84,7 @@ class CssMinifier extends AbstractMinifier {
 
     /**
      * Gets all the files needed for the provided CSS file. This will extract the imports from the CSS.
-     * @param ride\core\Zibo $ride Instance of Zibo
-     * @param ride\library\filesystem\File $file CSS source file
+     * @param \ride\library\system\file\File $file CSS source file
      * @return array Array with the path of the file as key and the File object as value
      */
     private function getFilesFromStyle(File $file) {
@@ -152,7 +151,7 @@ class CssMinifier extends AbstractMinifier {
     /**
      * Optimizes the provided CSS source
      * @param string $source CSS source
-     * @param ride\library\filesystem\File $file The file of the source
+     * @param \ride\library\system\file\File $file The file of the source
      * @return string optimized and minified CSS source
      */
     protected function minifySource($source, File $file) {
@@ -216,7 +215,7 @@ class CssMinifier extends AbstractMinifier {
 
     /**
      * Gets the CSS minifier
-     * @return ride\library\optimizer\CSSMin
+     * @return \ride\library\minifier\css\CSSMin
      */
     private function getCssMinifier() {
         if (!$this->cssMinifier) {

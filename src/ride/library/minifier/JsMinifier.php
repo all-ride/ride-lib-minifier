@@ -3,7 +3,6 @@
 namespace ride\library\minifier;
 
 use ride\library\minifier\js\JSMin;
-use ride\library\system\file\browser\FileBrowser;
 use ride\library\system\file\File;
 
 /**
@@ -20,7 +19,7 @@ class JsMinifier extends AbstractMinifier {
     /**
      * Minifies the provided JS source
      * @param string $source JS source
-     * @param ride\library\filesystem\File $file The file of the source
+     * @param \ride\library\system\file\File $file The file of the source
      * @return string Minified JS source
      */
     protected function minifySource($source, File $file) {
