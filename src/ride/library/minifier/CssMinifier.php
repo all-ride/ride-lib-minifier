@@ -118,7 +118,7 @@ class CssMinifier extends AbstractMinifier {
             }
 
             $styleFiles = $this->getFilesFromStyle($importFile);
-            $files = $styleFiles + $files;
+            $files = $files + $styleFiles;
         }
 
         $files[$file->getPath()] = $file;
@@ -208,7 +208,7 @@ class CssMinifier extends AbstractMinifier {
             $source
         );
 
-        // $source = "\n\n/* " . $file->getName() . " */\n\n" . $source;
+        $source = "\n\n/* " . $file->getName() . " */\n\n" . $source;
 
         return $source;
     }
