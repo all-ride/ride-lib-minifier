@@ -214,6 +214,15 @@ class CssMinifier extends AbstractMinifier {
     }
 
     /**
+     * Gets a hash for the provided files
+     * @param array $files Array of file objects of the files to minimize
+     * @return string MD5 hash of the file names
+     */
+    protected function getMinifiedFileHash(array $files) {
+        return md5($this->baseUrl . '-' . implode('-', array_values($files)));
+    }
+
+    /**
      * Gets the CSS minifier
      * @return \ride\library\minifier\css\CSSMin
      */
