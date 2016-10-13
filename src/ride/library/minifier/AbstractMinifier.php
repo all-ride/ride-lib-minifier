@@ -35,7 +35,7 @@ abstract class AbstractMinifier implements Minifier {
     private $host;
 
     /**
-     * Constructs a new optimizer
+     * Constructs a new minifier
      * @param \ride\library\system\file\browser\FileBrowser $fileBrowser
      * @param string $cachePath Path in the public directory
      * @return null
