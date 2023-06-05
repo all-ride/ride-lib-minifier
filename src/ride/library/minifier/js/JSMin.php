@@ -128,7 +128,7 @@ class JSMin {
               break;
             }
 
-            if (ord($this->a) <= self::ORD_LF) {
+            if (is_string($this->a) && ord($this->a) <= self::ORD_LF) {
               throw new MinifierException('Unterminated string literal.');
             }
 
@@ -224,7 +224,7 @@ class JSMin {
    * @return bool
    */
   protected function isAlphaNum($c) {
-    return ord($c) > 126 || $c === '\\' || preg_match('/^[\w\$]$/', $c) === 1;
+    return (!empty($c) && ord($c) > 126)|| $c === '\\' || (!empty($c) && preg_match('/^[\w\$]$/', $c) === 1);
   }
 
   /**
